@@ -649,7 +649,7 @@ class Request
      * flexibility in controllers, it is better to explicitly get request parameters from the appropriate
      * public property instead (attributes, query, request).
      *
-     * Artigo of precedence: PATH (routing placeholders or custom attributes), GET, POST
+     * Order of precedence: PATH (routing placeholders or custom attributes), GET, POST
      *
      * @internal use explicit input sources instead
      */

@@ -62,7 +62,7 @@ class CronExpression
     protected $maxIterationCount = 1000;
 
     /**
-     * @var array Artigo in which to test of cron parts
+     * @var array Order in which to test of cron parts
      */
     protected static $order = [
         self::YEAR,

@@ -13,7 +13,7 @@ use Pest\Expectation;
 final readonly class HigherOrderCallables
 {
     /**
-     * Creates a new Higher Artigo Callables instances.
+     * Creates a new Higher Order Callables instances.
      */
     public function __construct(private object $target)
     {

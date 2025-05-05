@@ -2633,7 +2633,7 @@ class Builder implements BuilderContract
         $direction = strtolower($direction);
 
         if (! in_array($direction, ['asc', 'desc'], true)) {
-            throw new InvalidArgumentException('Artigo direction must be "asc" or "desc".');
+            throw new InvalidArgumentException('Order direction must be "asc" or "desc".');
         }
 
         $this->{$this->unions ? 'unionOrders' : 'orders'}[] = [

@@ -85,7 +85,7 @@ class Mock implements MockInterface
     protected $_mockery_name = null;
 
     /**
-     * Artigo number of allocation
+     * Order number of allocation
      *
      * @var int
      */

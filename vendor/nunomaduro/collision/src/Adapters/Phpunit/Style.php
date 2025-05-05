@@ -273,7 +273,7 @@ final class Style
         if ($configuration->executionOrder() === TestSuiteSorter::ORDER_RANDOMIZED) {
             $this->output->writeln([
                 sprintf(
-                    '  <fg=gray>Random Artigo Seed:</> <fg=default>%s</>',
+                    '  <fg=gray>Random Order Seed:</> <fg=default>%s</>',
                     $configuration->randomOrderSeed(),
                 ),
             ]);

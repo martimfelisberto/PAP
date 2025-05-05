@@ -12,6 +12,9 @@ use App\Models\Artigo; // Ensure the Artigo class exists in this namespace
 
         // Consulta base
         $query = Artigo::query();
+        
+        // Adicionar filtro específico para sapatilhas
+        $query->where('tipo', 'sapatilhas');
 
         // Aplicar filtros
         if ($categoria !== 'todos') {
@@ -41,6 +44,16 @@ use App\Models\Artigo; // Ensure the Artigo class exists in this namespace
 
     <section class="py-5 product-section">
         <div class="container">
+            <h1 class="my-4">Sapatilhas 
+                @if (request()->genero == 'homem')
+                    para Homem
+                @elseif(request()->genero == 'mulher')
+                    para Mulher
+                @elseif(request()->genero == 'crianca')
+                    para Criança
+                @endif
+            </h1>
+
             <!-- Filtros e ordenação -->
             <div class="mb-4 row">
                
@@ -88,7 +101,7 @@ use App\Models\Artigo; // Ensure the Artigo class exists in this namespace
                             <div class="card-body">
                                 <!-- Nome e preço -->
                                 <h5 class="card-title">{{ $artigo->nome }}</h5>
-                                <p class="card-text text-success fw-bold">R$
+                                <p class="card-text text-success fw-bold">EUR€
                                     {{ number_format($artigo->preco, 2, ',', '.') }}</p>
                                 <p class="text-muted">{{ $artigo->marca }} - {{ $artigo->categoria }}</p>
 

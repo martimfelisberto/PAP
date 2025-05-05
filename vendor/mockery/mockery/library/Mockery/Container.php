@@ -60,7 +60,7 @@ class Container
     public const BLOCKS = Mockery::BLOCKS;
 
     /**
-     * Artigo number of allocation
+     * Order number of allocation
      *
      * @var int
      */

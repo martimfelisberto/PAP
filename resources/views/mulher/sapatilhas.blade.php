@@ -12,6 +12,9 @@ use App\Models\Artigo; // Ensure the Artigo class exists in this namespace
 
         // Consulta base
         $query = Artigo::query();
+        
+        // Adicionar filtro específico para sapatilhas
+        $query->where('tipo', 'sapatilhas');
 
         // Aplicar filtros
         if ($categoria !== 'todos') {
@@ -39,29 +42,21 @@ use App\Models\Artigo; // Ensure the Artigo class exists in this namespace
         $artigos = $query->paginate(12); // Paginação com 12 itens por página
     @endphp
 
-    <div class="container px-4 mx-auto">
-        <h1 class="my-4 text-2xl font-bold">Artigos para
-            @if (request()->genero == 'homem')
-                Homens
-            @elseif(request()->genero == 'mulher')
-                Mulheres
-            @elseif(request()->genero == 'crianca')
-                Crianças
-            @endif
-        </h1>
-
-        <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
-            @foreach ($artigos as $artigo)
-                @include('artigos._card', ['artigo' => $artigo])
-            @endforeach
-        </div>
-    </div>
-
     <section class="py-5 product-section">
         <div class="container">
+            <h1 class="my-4">Sapatilhas 
+                @if (request()->genero == 'homem')
+                    para Homem
+                @elseif(request()->genero == 'mulher')
+                    para Mulher
+                @elseif(request()->genero == 'crianca')
+                    para Criança
+                @endif
+            </h1>
+
             <!-- Filtros e ordenação -->
             <div class="mb-4 row">
-                
+               
                 <div class="col-md-6 text-end">
                     <div class="dropdown d-inline-block me-2">
                         <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="filterDropdown"
@@ -90,7 +85,6 @@ use App\Models\Artigo; // Ensure the Artigo class exists in this namespace
                 </div>
             </div>
 
-
             <!-- Listagem de produtos -->
             <div class="row">
                 @foreach ($artigos as $artigo)
@@ -101,8 +95,8 @@ use App\Models\Artigo; // Ensure the Artigo class exists in this namespace
                             @endif
 
                             <!-- Imagem do produto -->
-                            <img src="{{ $artigo->imagem ? asset('storage/artigos/' . $artigo->imagem) : asset('images/placeholder.jpg') }}"
-                                class="card-img-top" alt="{{ $artigo->nome }}">
+                            <img src="{{ asset('storage/' . $artigo->imagem) }}" class="card-img-top"
+                                alt="{{ $artigo->nome }}">
 
                             <div class="card-body">
                                 <!-- Nome e preço -->

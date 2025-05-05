@@ -29,7 +29,7 @@
                             </div>
                         </div>
 
-                        <!-- Total Orders -->
+                        <!-- Total Artigos -->
                         <div class="bg-white dark:bg-gray-800 shadow-lg rounded-xl">
                             <div class="p-6">
                                 <div class="flex items-center">
@@ -37,7 +37,7 @@
                                         
                                     </div>
                                     <div class="ml-5">
-                                        <h4 class="text-xl font-semibold text-gray-900 dark:text-white">Total Orders</h4>
+                                        <h4 class="text-xl font-semibold text-gray-900 dark:text-white">Total Artigos</h4>
                                         <div class="mt-2 text-4xl font-bold text-gray-900 dark:text-white">
                                             {{ $stats['total_orders'] }}
                                         </div>
@@ -64,10 +64,10 @@
                         </div>
                     </div>
 
-                    <!-- Coluna Direita - Recent Orders -->
+                    <!-- Coluna Direita - Recent Artigos -->
                     <div class="bg-white dark:bg-gray-800 shadow-lg rounded-xl h-fit"> <!-- Altura automática -->
                         <div class="p-6">
-                            <h4 class="text-2xl font-semibold text-gray-900 dark:text-white mb-6">Recent Orders</h4>
+                            <h4 class="text-2xl font-semibold text-gray-900 dark:text-white mb-6">Recent Artigos</h4>
                             <div class="overflow-x-auto">
                                 <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
                                     <thead class="bg-gray-50 dark:bg-gray-700">
@@ -80,32 +80,32 @@
                                         </tr>
                                     </thead>
                                     <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
-                                        @forelse ($recent_orders as $order)
+                                        @forelse ($recent_orders as $artigo)
                                             <tr>
                                                 <td class="px-5 py-4 whitespace-nowrap text-base text-gray-900 dark:text-white">
-                                                    #{{ $order->id }}
+                                                    #{{ $artigo->id }}
                                                 </td>
                                                 <td class="px-5 py-4 whitespace-nowrap text-base text-gray-900 dark:text-white">
-                                                    {{ $order->user->name }}
+                                                    {{ $artigo->user->name }}
                                                 </td>
                                                 <td class="px-5 py-4 whitespace-nowrap">
                                                     <span class="px-3 py-1 inline-flex text-sm leading-5 font-semibold rounded-lg
-                                                        {{ $order->status === 'completed' ? 'bg-green-100 text-green-800' : 
-                                                           ($order->status === 'pending' ? 'bg-yellow-100 text-yellow-800' : 'bg-red-100 text-red-800') }}">
-                                                        {{ ucfirst($order->status) }}
+                                                        {{ $artigo->status === 'completed' ? 'bg-green-100 text-green-800' : 
+                                                           ($artigo->status === 'pending' ? 'bg-yellow-100 text-yellow-800' : 'bg-red-100 text-red-800') }}">
+                                                        {{ ucfirst($artigo->status) }}
                                                     </span>
                                                 </td>
                                                 <td class="px-5 py-4 whitespace-nowrap text-base text-gray-900 dark:text-white">
-                                                    €{{ number_format($order->total_amount, 2) }}
+                                                    €{{ number_format($artigo->total_amount, 2) }}
                                                 </td>
                                                 <td class="px-5 py-4 whitespace-nowrap text-base text-gray-900 dark:text-white">
-                                                    {{ $order->created_at->format('d/m/Y H:i') }}
+                                                    {{ $artigo->created_at->format('d/m/Y H:i') }}
                                                 </td>
                                             </tr>
                                         @empty
                                             <tr>
                                                 <td colspan="5" class="px-5 py-4 text-center text-gray-500 dark:text-gray-400 text-lg">
-                                                    No orders found
+                                                    No artigos found
                                                 </td>
                                             </tr>
                                         @endforelse

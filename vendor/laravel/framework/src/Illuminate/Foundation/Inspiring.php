@@ -84,7 +84,7 @@ class Inspiring
             'Live as if you were to die tomorrow. Learn as if you were to live forever. - Mahatma Gandhi',
             'No surplus words or unnecessary actions. - Marcus Aurelius',
             'Nothing worth having comes easy. - Theodore Roosevelt',
-            'Artigo your soul. Reduce your wants. - Augustine',
+            'Order your soul. Reduce your wants. - Augustine',
             'People find pleasure in different ways. I find it in keeping my mind clear. - Marcus Aurelius',
             'Simplicity is an acquired taste. - Katharine Gerould',
             'Simplicity is the consequence of refined emotions. - Jean D\'Alembert',

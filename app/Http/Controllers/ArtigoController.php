@@ -136,7 +136,7 @@ class ArtigoController extends Controller
         Artigo::create($validated);
         
         return redirect()->route('artigos.index', ['genero' => $request->genero])
-        ->with('success', 'Order criado com sucesso!');
+        ->with('success', 'Artigo criado com sucesso!');
 
         
 

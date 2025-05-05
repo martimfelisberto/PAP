@@ -50,7 +50,7 @@
             </div>
         @else
             <div class="alert alert-danger">
-                Order não encontrado ou não disponível.
+                Artigo não encontrado ou não disponível.
             </div>
         @endisset
     </div>

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Order;
+use App\Models\Artigo;
 
 class CarrinhoController extends Controller
 
@@ -35,7 +35,7 @@ class CarrinhoController extends Controller
             'quantidade' => 'nullable|integer|min:1'
         ]);
 
-        $produto = Order::findOrFail($request->id);
+        $produto = Artigo::findOrFail($request->id);
     $quantidade = $request->quantidade ?? 1;
 
     $carrinho = session()->get('carrinho', []);
@@ -90,7 +90,7 @@ class CarrinhoController extends Controller
         }
 
         return redirect()->back()
-            ->with('error', 'Order não encontrado no carrinho!');
+            ->with('error', 'Artigo não encontrado no carrinho!');
     }
 
     public function atualizar(Request $request, $id)
@@ -110,7 +110,7 @@ class CarrinhoController extends Controller
         }
 
         return redirect()->back()
-            ->with('error', 'Order não encontrado no carrinho!');
+            ->with('error', 'Artigo não encontrado no carrinho!');
     }
 
     public function limpar()
